@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hover Underline Effect</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+        /* body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    } */
+
+    .hover-text {
+    position: relative;
+    font-size: 2em;
+    color: #333;
+    text-align: center;
+    cursor: pointer;
+    }
+
+    .hover-text::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px; /* Adjust this value to control the underline distance from the text */
+    width: 0;
+    height: 2px; /* Thickness of the underline */
+    background-color: #007acc; /* Color of the underline */
+    transition: width 0.4s ease, left 0.4s ease;
+    transform: translateX(-50%);
+    }
+
+    .hover-text:hover::after {
+    width: 100%; /* Full width on hover */
+    left: 0;
+    transform: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="hover-text">
+    Hover over me
+  </div>
+</body>
+</html>
